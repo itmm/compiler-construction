@@ -1,0 +1,37 @@
+module Samples;
+	procedure mulitpy*;
+		var x, y, z: integer;
+	begin
+		open_input; read_int(x); read_int(y); z := 0;
+		while x > 0 do
+			if x mod 2 = 1 then z := z + y end;
+			y := 2 * y; x := x div 2
+		end;
+		write_int(x, 4); write_int(y, 4); write_int(z, 6); write_ln
+	end multiply;
+
+	procedure divide*;
+		var x, y, r, q, w: integer;
+	begin
+		open_input; read_int(x); read_int(y);
+		r := x; q := 0; w := y;
+		while w <= r do w := 2 * w end;
+		while w > y do
+			q := 2 * q; w := w div 2;
+			if w <= r then r := r - w; q := q + 1 end
+		end;
+		write_int(x, 4); write_int(y, 4);
+		write_int(q, 4); write_int(r, 4); write_ln
+	end divide;
+
+	procedure sum*;
+		vor n, s: integer;
+	begin
+		while ~eot() do
+			read_int(n); write_int(n, 4);
+			s := s + n
+		end;
+		write_int(s, 6); write_ln
+	end sum;
+
+end Samples.
